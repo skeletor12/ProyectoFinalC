@@ -15,7 +15,31 @@ var arrseleccion : [Puntos] = []
 
 class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
     
-    var codigoRuta = 0
+    @IBOutlet weak var texto: UILabel!
+    var texto2 = ""
+    
+    var detailItem: AnyObject? {
+        didSet {
+            // Update the view.
+            self.configureView()
+        }
+    }
+    
+    func configureView() -> String {
+        // Update the user interface or the detail item.
+        if let detail = self.detailItem {
+            if self.texto != nil {
+                texto.text = detail.valueForKey("nombre")!.description
+                let texto2 = detail.valueForKey("nombre")!.description
+                return texto2
+            }
+        }
+         return texto2
+    }  
+ 
+    
+   
+    var codigoRuta : Int = 0
     
     var origen : MKMapItem!
     var destino : MKMapItem!
@@ -24,7 +48,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     override func viewWillAppear(animated: Bool) {
         codigoRuta=Int(codigoRuta)
-        print(codigoRuta)
+        //print(codigoRuta)
     }
    
     var contexto : NSManagedObjectContext? = nil
@@ -64,6 +88,8 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureView()
+        let texto2 = configureView()
         
         manejador.delegate = self
         manejador.desiredAccuracy = kCLLocationAccuracyBest
@@ -72,9 +98,34 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
         manejador.startMonitoringSignificantLocationChanges()
         
         
-        //var seleccion = Puntos ()
+        let seleccion = Puntos ()
         
         var punto = CLLocationCoordinate2D()
+        
+        
+        self.contexto2 = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        
+        let seccionEntidad4 = NSEntityDescription.entityForName("Rutas", inManagedObjectContext: self.contexto2!)
+        
+        let peticion2 = seccionEntidad4?.managedObjectModel.fetchRequestTemplateForName("busqueda")
+        do{
+            let  seccionesEntidad4 = try self.contexto2?.executeFetchRequest(peticion2!)
+            
+            for seccionEntidad4 in seccionesEntidad4! {
+                
+                let isbnreq = seccionEntidad4.valueForKey("nombre") as! String
+                let tituloreq = seccionEntidad4.valueForKey("codigo") as! Int
+                
+                if isbnreq == texto2 {
+                codigoRuta = tituloreq
+                //print(codigoRuta)
+                }
+            }
+        }
+        catch _ {
+            
+        }
     
         self.contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
@@ -97,8 +148,17 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 
                 arrseleccion.append(seleccion)*/
                 
-                
+                //codigoRuta2 = configureView()
+                //print(codigo)
+                //print(codigoRuta)
                 if codigo == codigoRuta {
+                    
+                    seleccion.nombrePunto = nombrepunto
+                    seleccion.codigo = codigo
+                    seleccion.latitud = latitude
+                    seleccion.longitud = longitude
+                    
+                    arrseleccion.append(seleccion)
                 
                 punto.latitude = latitude
                 punto.longitude = longitude
@@ -115,6 +175,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
             
         }
         
+        dump(arrseleccion)
        /* manejador.delegate = self
         manejador.desiredAccuracy = kCLLocationAccuracyBest
         manejador.desiredAccuracy = kCLLocationAccuracyKilometer;

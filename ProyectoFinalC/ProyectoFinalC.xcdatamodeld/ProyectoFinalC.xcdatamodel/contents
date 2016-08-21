@@ -5,15 +5,17 @@
         <attribute name="latitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitud" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="nombrepunto" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pertenece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Rutas" inverseName="tiene" inverseEntity="Rutas" syncable="YES"/>
     </entity>
     <entity name="Rutas" syncable="YES">
-        <attribute name="codigo" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="codigo" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tiene" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Puntos" inverseName="pertenece" inverseEntity="Puntos" syncable="YES"/>
     </entity>
     <fetchRequest name="buscarPunto" entity="Puntos"/>
     <fetchRequest name="busqueda" entity="Rutas"/>
     <elements>
-        <element name="Puntos" positionX="-54" positionY="0" width="128" height="105"/>
-        <element name="Rutas" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Puntos" positionX="-54" positionY="0" width="128" height="120"/>
+        <element name="Rutas" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

@@ -34,29 +34,32 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
         punto.codigo = tituloreq
         punto.nombre = isbnreq
         punteria.append(punto)
-    
-    //let nombreRuta = seccionEntidad2.valueForKey("nombre") as! String
+        //let nombreRuta = seccionEntidad2.valueForKey("nombre") as! String
     //let codigoRuta = seccionEntidad2.valueForKey("codigo") as! Int
     //punto.codigo = codigoRuta + 1
     //punto.nombre = nombreRuta
     //let ultimoCodigo = seccionEntidad2.valueForKey("codigo") as! Int
        //punto.codigo = ultimoCodigo
     }
+        
     }
-    catch _ {
-    
-    }
+        catch _ {
+            
+        } 
+   
         return punto.codigo
+        
+       
     }
     
     @IBOutlet weak var ruta: UITextField!
     @IBAction func ruta(sender: AnyObject) {
         busqueda()
         
-        if punto.codigo != 0 {
-            punto.codigo =  punto.codigo + 1
+        if punto.codigo == 0 {
+            punto.codigo =  1
         } else {
-            punto.codigo = 1
+            punto.codigo = punto.codigo +  1
         }
         
     let nuevaSeccionEntidad = NSEntityDescription.insertNewObjectForEntityForName("Rutas", inManagedObjectContext: self.contexto!)
@@ -111,10 +114,7 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
         catch _ {
             
         }
- 
-        
-      
-        
+       
         // Uncomment the following line to preserve selection between presentations
        // self.clearsSelectionOnViewWillAppear = true
         
@@ -311,13 +311,41 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
       
+    
+            /*if segue.identifier == "Trazando" {
+                  let indexPath = self.tableView.indexPathForSelectedRow
+                    let object = self.fetchedResultsController.objectAtIndexPath(indexPath!)
+                    let controller = segue.destinationViewController as! RutasView
+                    controller.codigoRuta = punteria[object.row].codigo
+                }*/
         
-                if segue.identifier == "trazando"{
-                    
+        /*
+        let buscados = segue.destinationViewController as! ViewBuscado
+        let ip = self.tableView.indexPathForSelectedRow
+        buscados.ISBN = libreria[ip!.row].isbn
+ */
+        
+        
+        /*if segue.identifier == "Trazando" {
+                    //envio = object.valueForKey("nombre")!.description
                         let envio = busqueda()
+                    print(punto.codigo)
                         let sigVista=segue.destinationViewController as! RutasView
-                        sigVista.codigoRuta = envio
-    }
+                        sigVista.codigoRuta = punto.codigo
+        }*/
+        
+        
+            if segue.identifier == "Trazando" {
+                let indexPath = self.tableView.indexPathForSelectedRow
+                    let object = self.fetchedResultsController.objectAtIndexPath(indexPath!)
+                    let controller = segue.destinationViewController as! RutasView
+                    controller.detailItem = object
+                    
+                
+            
+        }
+        
+        
 }
 }
 
