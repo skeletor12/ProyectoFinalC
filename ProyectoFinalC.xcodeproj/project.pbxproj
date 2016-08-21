@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE65EEBB1D680B9E00D4A612 /* mapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65EEBA1D680B9E00D4A612 /* mapaView.swift */; };
 		EE8B4EFA1D65176900E9773D /* Rutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B4EF91D65176900E9773D /* Rutas.swift */; };
 		EEFD57581D63FB6700FCEFCB /* Puntos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD57571D63FB6700FCEFCB /* Puntos.swift */; };
 		EEFD575C1D6406A600FCEFCB /* RutasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD575B1D6406A600FCEFCB /* RutasView.swift */; };
@@ -17,10 +18,10 @@
 		EEFDB9791D62BEFE00FB1376 /* ProyectoFinalC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EEFDB9771D62BEFE00FB1376 /* ProyectoFinalC.xcdatamodeld */; };
 		EEFDB97B1D62BEFE00FB1376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEFDB97A1D62BEFE00FB1376 /* Assets.xcassets */; };
 		EEFDB97E1D62BEFE00FB1376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEFDB97C1D62BEFE00FB1376 /* LaunchScreen.storyboard */; };
-		EEFDB9C31D62D74100FB1376 /* mapa.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFDB9C21D62D74100FB1376 /* mapa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE65EEBA1D680B9E00D4A612 /* mapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapaView.swift; sourceTree = "<group>"; };
 		EE8B4EF91D65176900E9773D /* Rutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rutas.swift; sourceTree = "<group>"; };
 		EEFD57571D63FB6700FCEFCB /* Puntos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puntos.swift; sourceTree = "<group>"; };
 		EEFD575B1D6406A600FCEFCB /* RutasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RutasView.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		EEFDB97A1D62BEFE00FB1376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEFDB97D1D62BEFE00FB1376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEFDB97F1D62BEFE00FB1376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEFDB9C21D62D74100FB1376 /* mapa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapa.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +73,11 @@
 				EEFDB97C1D62BEFE00FB1376 /* LaunchScreen.storyboard */,
 				EEFDB97F1D62BEFE00FB1376 /* Info.plist */,
 				EEFDB9771D62BEFE00FB1376 /* ProyectoFinalC.xcdatamodeld */,
-				EEFDB9C21D62D74100FB1376 /* mapa.swift */,
 				EEFD57571D63FB6700FCEFCB /* Puntos.swift */,
 				EEFD575B1D6406A600FCEFCB /* RutasView.swift */,
 				EEFD575D1D641D6B00FCEFCB /* TableView.swift */,
 				EE8B4EF91D65176900E9773D /* Rutas.swift */,
+				EE65EEBA1D680B9E00D4A612 /* mapaView.swift */,
 			);
 			path = ProyectoFinalC;
 			sourceTree = "<group>";
@@ -156,8 +156,8 @@
 			files = (
 				EEFD57581D63FB6700FCEFCB /* Puntos.swift in Sources */,
 				EEFD575C1D6406A600FCEFCB /* RutasView.swift in Sources */,
-				EEFDB9C31D62D74100FB1376 /* mapa.swift in Sources */,
 				EEFD575E1D641D6B00FCEFCB /* TableView.swift in Sources */,
+				EE65EEBB1D680B9E00D4A612 /* mapaView.swift in Sources */,
 				EEFDB9731D62BEFE00FB1376 /* ViewController.swift in Sources */,
 				EE8B4EFA1D65176900E9773D /* Rutas.swift in Sources */,
 				EEFDB9711D62BEFE00FB1376 /* AppDelegate.swift in Sources */,
