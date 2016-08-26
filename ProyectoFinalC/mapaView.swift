@@ -12,7 +12,7 @@ import MapKit
 import CoreData
 
 var localizados : [Puntos] = []
-
+var ruta : [Rutas] = []
 
 
 class mapaView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
@@ -20,6 +20,7 @@ class mapaView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  
     
     var codigoRuta : Int = 0
     let puntoDatos = Puntos()
+    let envioRuta = Rutas()
     
     
     @IBOutlet weak var nombrePunto: UITextField!
@@ -108,13 +109,18 @@ class mapaView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  
             
             for seccionEntidad2 in seccionesEntidad! {
                 
+                let nombreRuta = seccionEntidad2.valueForKey("nombre") as! String
                 let ultimoCodigo = seccionEntidad2.valueForKey("codigo") as! Int
                 /*if ultimoCodigo != 0 {
                     puntoDatos.codigo = ultimoCodigo + 1
                 } else {
                 puntoDatos.codigo = 1
                 }*/
+                
                 puntoDatos.codigo = ultimoCodigo
+                envioRuta.nombre = nombreRuta
+               
+               
             }
         }
         catch _ {
@@ -177,9 +183,17 @@ class mapaView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  
     
     
     @IBAction func trazar(sender: AnyObject) {
+  
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        
-        
+        if segue.identifier == "Trazando" {
+            let ruta = envioRuta
+            let controller = segue.destinationViewController as! RutasView
+            controller.textoi = ruta.nombre
+            controller.selector = 2
+        }
         
         
     }

@@ -126,8 +126,8 @@
                                     <action selector="botones:" destination="rzK-eT-e1d" eventType="valueChanged" id="GTR-Ji-DWD"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9g-5X-Q07">
-                                <rect key="frame" x="20" y="64" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9g-5X-Q07">
+                                <rect key="frame" x="20" y="64" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -207,7 +207,7 @@
                                 <state key="normal" title="TRAZAR"/>
                                 <connections>
                                     <action selector="trazar:" destination="2WN-5t-IKQ" eventType="touchUpInside" id="g24-6F-XAZ"/>
-                                    <segue destination="rzK-eT-e1d" kind="push" id="FmO-aM-eMV"/>
+                                    <segue destination="rzK-eT-e1d" kind="push" identifier="Trazando" id="FmO-aM-eMV"/>
                                 </connections>
                             </button>
                         </subviews>

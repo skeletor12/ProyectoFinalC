@@ -82,6 +82,7 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        punteria.removeAll()
         self.title = "RUTAS PREVIAS"
         
         let punto = Rutas()
@@ -104,6 +105,7 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
                 punteria.append(punto)
                 print(punto.nombre)
                 print(punto.codigo)
+                dump(punteria)
               
                 
             }
@@ -340,6 +342,7 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
                     let object = self.fetchedResultsController.objectAtIndexPath(indexPath!)
                     let controller = segue.destinationViewController as! RutasView
                     controller.detailItem = object
+                controller.selector = 1
                     
                 
             

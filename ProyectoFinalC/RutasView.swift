@@ -13,10 +13,16 @@ import CoreData
 
 var arrseleccion : [Puntos] = []
 
+
 class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
+    
+  
     
     @IBOutlet weak var texto: UILabel!
     var texto2 = ""
+    var textoi = ""
+    var selector = 0
+    var eleccion = 0
     
     var detailItem: AnyObject? {
         didSet {
@@ -31,10 +37,12 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
             if self.texto != nil {
                 texto.text = detail.valueForKey("nombre")!.description
                 let texto2 = detail.valueForKey("nombre")!.description
+                
                 return texto2
+                
             }
         }
-         return texto2
+        return texto2
     }  
  
     
@@ -43,11 +51,15 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     var origen : MKMapItem!
     var destino : MKMapItem!
-    var unomas : MKMapItem!
+
     
     
     override func viewWillAppear(animated: Bool) {
+        arrseleccion.removeAll()
         codigoRuta=Int(codigoRuta)
+        if eleccion == 2 {
+        texto.text=String(textoi) }
+        texto2=String(textoi)
         //print(codigoRuta)
     }
    
@@ -89,7 +101,12 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
-        let texto2 = configureView()
+        var texto2 = configureView()
+        eleccion = Int(selector)
+        
+        if eleccion == 2 {
+            texto2=String(textoi) }
+       
         
         manejador.delegate = self
         manejador.desiredAccuracy = kCLLocationAccuracyBest
@@ -152,22 +169,24 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 //print(codigo)
                 //print(codigoRuta)
                 if codigo == codigoRuta {
+                   
                     
                     seleccion.nombrePunto = nombrepunto
                     seleccion.codigo = codigo
                     seleccion.latitud = latitude
                     seleccion.longitud = longitude
                     
-                    arrseleccion.append(seleccion)
+                arrseleccion.append(seleccion)
+               
                 
-                punto.latitude = latitude
+                /*punto.latitude = latitude
                 punto.longitude = longitude
                 
                 let pin = MKPointAnnotation()
                 pin.title = String(nombrepunto)
                 pin.subtitle = "Lat. \(String(format:"%4.4f", punto.latitude)), Long. \(String(format:"%4.4f",punto.longitude))"
                 pin.coordinate = punto
-                mapa.addAnnotation(pin)
+                mapa.addAnnotation(pin)*/
                 }
             }
             }
@@ -175,36 +194,51 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
             
         }
         
-        dump(arrseleccion)
-       /* manejador.delegate = self
-        manejador.desiredAccuracy = kCLLocationAccuracyBest
-        manejador.desiredAccuracy = kCLLocationAccuracyKilometer;
-        manejador.requestWhenInUseAuthorization()
-        manejador.startMonitoringSignificantLocationChanges()
+        print(arrseleccion.count)
+        print(arrseleccion[0].longitud)
+        print(arrseleccion[1].longitud)
+        print(arrseleccion[2].longitud)
+        //dump(arrseleccion)
+        
+      
+        
         mapa.delegate = self
         
-        var puntoCoor = CLLocationCoordinate2D(latitude: 19.359727, longitude: -99.257700)
+        var repetir = 1
+        var x = 0
+        var y = 1
+        
+        
+        repeat {
+            
+            let punto0 = arrseleccion[x]
+        
+        var puntoCoor = CLLocationCoordinate2D(latitude: punto0.latitud, longitude: punto0.longitud)
         var puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
         origen = MKMapItem(placemark: puntoLugar)
-        origen.name = "TEcnolgico de Monterrey"
+        origen.name = punto0.nombrePunto
+            
+            let punto1 = arrseleccion[y]
         
-        puntoCoor = CLLocationCoordinate2D(latitude: 19.362896, longitude: -99.268856)
+        puntoCoor = CLLocationCoordinate2D(latitude: punto1.latitud, longitude: punto1.longitud)
         puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
         destino = MKMapItem(placemark: puntoLugar)
-        destino.name = "centro comercial"
-        
-        puntoCoor = CLLocationCoordinate2D(latitude: 19.358543, longitude: -99.276304)
-        puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-        unomas = MKMapItem(placemark: puntoLugar)
-        unomas.name = "Glorieta"
+        destino.name = punto1.nombrePunto
         
         self.anotaPunto(origen!)
         self.anotaPunto(destino!)
-        self.anotaPunto(unomas!)
+      
         
         self.obtenerRuta(self.origen!, destino:self.destino!)
-        self.obtenerRuta(self.destino!, destino: self.unomas!)
+        repetir = repetir + 1
+        x = x + 1
+        y = y + 1  
+        }
+        while repetir < arrseleccion.count
+        
     }
+    
+    
     
     func anotaPunto(punto: MKMapItem){
         let anota = MKPointAnnotation()
@@ -229,10 +263,10 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
             
             
             
-        })*/
+        })
     }
     
-   /* func muestraRuta(respuesta: MKDirectionsResponse){
+    func muestraRuta(respuesta: MKDirectionsResponse){
         for ruta in respuesta.routes{
             mapa.addOverlay(ruta.polyline, level: MKOverlayLevel.AboveRoads)
             for paso in ruta.steps {
@@ -247,8 +281,9 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay : MKOverlay) -> MKOverlayRenderer {
         let renderer  = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor.blueColor()
+        renderer.strokeColor = UIColor.redColor()
         renderer.lineWidth = 3.0
         return renderer
-    }*/
+    }
+    
 }
