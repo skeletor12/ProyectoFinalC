@@ -195,6 +195,12 @@ class mapaView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  
             controller.selector = 2
         }
         
+        if segue.identifier == "Realidad" {
+            let ruta = envioRuta
+            let controller = segue.destinationViewController as! realidadAumentadaView
+            controller.textoi = ruta.nombre
+        }
+        
         
     }
     

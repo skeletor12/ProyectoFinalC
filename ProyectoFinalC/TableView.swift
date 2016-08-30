@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 var punteria : [Rutas] = []
+var arrseleccion : [Puntos] = []
 
 class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
     

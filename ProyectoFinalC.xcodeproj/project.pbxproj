@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE2A89691D72BE1300944C3B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A89681D72BE1300944C3B /* MapKit.framework */; };
+		EE2A896C1D72BE1E00944C3B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A896A1D72BE1E00944C3B /* CoreMotion.framework */; };
+		EE2A896D1D72BE1E00944C3B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE2A896B1D72BE1E00944C3B /* CoreLocation.framework */; };
+		EE2A89731D72BF2C00944C3B /* realidadAumentadaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89721D72BF2C00944C3B /* realidadAumentadaView.swift */; };
+		EE2A89871D72C11700944C3B /* ARAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89821D72C11700944C3B /* ARAnnotation.swift */; };
+		EE2A89881D72C11700944C3B /* ARAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89831D72C11700944C3B /* ARAnnotationView.swift */; };
+		EE2A89891D72C11700944C3B /* ARConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89841D72C11700944C3B /* ARConfiguration.swift */; };
+		EE2A898A1D72C11700944C3B /* ARTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89851D72C11700944C3B /* ARTrackingManager.swift */; };
+		EE2A898B1D72C11700944C3B /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89861D72C11700944C3B /* ARViewController.swift */; };
+		EE2A898D1D72C12300944C3B /* DebugMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A898C1D72C12300944C3B /* DebugMapViewController.swift */; };
+		EE2A89931D72C14200944C3B /* DebugMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE2A898F1D72C14200944C3B /* DebugMapViewController.xib */; };
+		EE2A89941D72C14200944C3B /* hdar_close.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A89901D72C14200944C3B /* hdar_close.png */; };
+		EE2A89951D72C14200944C3B /* hdar_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A89911D72C14200944C3B /* hdar_close@2x.png */; };
+		EE2A89961D72C14200944C3B /* hdar_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EE2A89921D72C14200944C3B /* hdar_close@3x.png */; };
+		EE2A89981D72C28500944C3B /* TestAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89971D72C28500944C3B /* TestAnnotationView.swift */; };
+		EE2A899A1D72C89900944C3B /* codigoQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A89991D72C89900944C3B /* codigoQRView.swift */; };
+		EE2A899C1D72C8F000944C3B /* muestraQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A899B1D72C8F000944C3B /* muestraQRView.swift */; };
 		EE65EEBB1D680B9E00D4A612 /* mapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65EEBA1D680B9E00D4A612 /* mapaView.swift */; };
 		EE8B4EFA1D65176900E9773D /* Rutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B4EF91D65176900E9773D /* Rutas.swift */; };
 		EEFD57581D63FB6700FCEFCB /* Puntos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD57571D63FB6700FCEFCB /* Puntos.swift */; };
@@ -21,6 +38,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE2A89681D72BE1300944C3B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MapKit.framework; sourceTree = "<group>"; };
+		EE2A896A1D72BE1E00944C3B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreMotion.framework; sourceTree = "<group>"; };
+		EE2A896B1D72BE1E00944C3B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreLocation.framework; sourceTree = "<group>"; };
+		EE2A89721D72BF2C00944C3B /* realidadAumentadaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = realidadAumentadaView.swift; sourceTree = "<group>"; };
+		EE2A89821D72C11700944C3B /* ARAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARAnnotation.swift; sourceTree = "<group>"; };
+		EE2A89831D72C11700944C3B /* ARAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARAnnotationView.swift; sourceTree = "<group>"; };
+		EE2A89841D72C11700944C3B /* ARConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARConfiguration.swift; sourceTree = "<group>"; };
+		EE2A89851D72C11700944C3B /* ARTrackingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARTrackingManager.swift; sourceTree = "<group>"; };
+		EE2A89861D72C11700944C3B /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
+		EE2A898C1D72C12300944C3B /* DebugMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMapViewController.swift; sourceTree = "<group>"; };
+		EE2A898F1D72C14200944C3B /* DebugMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DebugMapViewController.xib; sourceTree = "<group>"; };
+		EE2A89901D72C14200944C3B /* hdar_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hdar_close.png; sourceTree = "<group>"; };
+		EE2A89911D72C14200944C3B /* hdar_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hdar_close@2x.png"; sourceTree = "<group>"; };
+		EE2A89921D72C14200944C3B /* hdar_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hdar_close@3x.png"; sourceTree = "<group>"; };
+		EE2A89971D72C28500944C3B /* TestAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAnnotationView.swift; sourceTree = "<group>"; };
+		EE2A89991D72C89900944C3B /* codigoQRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = codigoQRView.swift; sourceTree = "<group>"; };
+		EE2A899B1D72C8F000944C3B /* muestraQRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = muestraQRView.swift; sourceTree = "<group>"; };
 		EE65EEBA1D680B9E00D4A612 /* mapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapaView.swift; sourceTree = "<group>"; };
 		EE8B4EF91D65176900E9773D /* Rutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rutas.swift; sourceTree = "<group>"; };
 		EEFD57571D63FB6700FCEFCB /* Puntos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puntos.swift; sourceTree = "<group>"; };
@@ -41,15 +75,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE2A896D1D72BE1E00944C3B /* CoreLocation.framework in Frameworks */,
+				EE2A89691D72BE1300944C3B /* MapKit.framework in Frameworks */,
+				EE2A896C1D72BE1E00944C3B /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE2A89741D72C0B900944C3B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A89821D72C11700944C3B /* ARAnnotation.swift */,
+				EE2A89831D72C11700944C3B /* ARAnnotationView.swift */,
+				EE2A89841D72C11700944C3B /* ARConfiguration.swift */,
+				EE2A89851D72C11700944C3B /* ARTrackingManager.swift */,
+				EE2A89861D72C11700944C3B /* ARViewController.swift */,
+				EE2A897F1D72C0EA00944C3B /* Debug */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		EE2A897F1D72C0EA00944C3B /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A898C1D72C12300944C3B /* DebugMapViewController.swift */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+		EE2A898E1D72C12C00944C3B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE2A898F1D72C14200944C3B /* DebugMapViewController.xib */,
+				EE2A89901D72C14200944C3B /* hdar_close.png */,
+				EE2A89911D72C14200944C3B /* hdar_close@2x.png */,
+				EE2A89921D72C14200944C3B /* hdar_close@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		EEFDB9641D62BEFE00FB1376 = {
 			isa = PBXGroup;
 			children = (
+				EE2A896A1D72BE1E00944C3B /* CoreMotion.framework */,
+				EE2A896B1D72BE1E00944C3B /* CoreLocation.framework */,
+				EE2A89681D72BE1300944C3B /* MapKit.framework */,
 				EEFDB96F1D62BEFE00FB1376 /* ProyectoFinalC */,
 				EEFDB96E1D62BEFE00FB1376 /* Products */,
 			);
@@ -66,6 +138,8 @@
 		EEFDB96F1D62BEFE00FB1376 /* ProyectoFinalC */ = {
 			isa = PBXGroup;
 			children = (
+				EE2A898E1D72C12C00944C3B /* Resources */,
+				EE2A89741D72C0B900944C3B /* Classes */,
 				EEFDB9701D62BEFE00FB1376 /* AppDelegate.swift */,
 				EEFDB9721D62BEFE00FB1376 /* ViewController.swift */,
 				EEFDB9741D62BEFE00FB1376 /* Main.storyboard */,
@@ -78,6 +152,10 @@
 				EEFD575D1D641D6B00FCEFCB /* TableView.swift */,
 				EE8B4EF91D65176900E9773D /* Rutas.swift */,
 				EE65EEBA1D680B9E00D4A612 /* mapaView.swift */,
+				EE2A89721D72BF2C00944C3B /* realidadAumentadaView.swift */,
+				EE2A89971D72C28500944C3B /* TestAnnotationView.swift */,
+				EE2A89991D72C89900944C3B /* codigoQRView.swift */,
+				EE2A899B1D72C8F000944C3B /* muestraQRView.swift */,
 			);
 			path = ProyectoFinalC;
 			sourceTree = "<group>";
@@ -142,8 +220,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEFDB97E1D62BEFE00FB1376 /* LaunchScreen.storyboard in Resources */,
+				EE2A89941D72C14200944C3B /* hdar_close.png in Resources */,
+				EE2A89961D72C14200944C3B /* hdar_close@3x.png in Resources */,
 				EEFDB97B1D62BEFE00FB1376 /* Assets.xcassets in Resources */,
 				EEFDB9761D62BEFE00FB1376 /* Main.storyboard in Resources */,
+				EE2A89951D72C14200944C3B /* hdar_close@2x.png in Resources */,
+				EE2A89931D72C14200944C3B /* DebugMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,12 +238,22 @@
 			files = (
 				EEFD57581D63FB6700FCEFCB /* Puntos.swift in Sources */,
 				EEFD575C1D6406A600FCEFCB /* RutasView.swift in Sources */,
+				EE2A89881D72C11700944C3B /* ARAnnotationView.swift in Sources */,
 				EEFD575E1D641D6B00FCEFCB /* TableView.swift in Sources */,
+				EE2A89871D72C11700944C3B /* ARAnnotation.swift in Sources */,
 				EE65EEBB1D680B9E00D4A612 /* mapaView.swift in Sources */,
 				EEFDB9731D62BEFE00FB1376 /* ViewController.swift in Sources */,
+				EE2A898B1D72C11700944C3B /* ARViewController.swift in Sources */,
+				EE2A89891D72C11700944C3B /* ARConfiguration.swift in Sources */,
+				EE2A89981D72C28500944C3B /* TestAnnotationView.swift in Sources */,
 				EE8B4EFA1D65176900E9773D /* Rutas.swift in Sources */,
+				EE2A89731D72BF2C00944C3B /* realidadAumentadaView.swift in Sources */,
 				EEFDB9711D62BEFE00FB1376 /* AppDelegate.swift in Sources */,
+				EE2A899C1D72C8F000944C3B /* muestraQRView.swift in Sources */,
 				EEFDB9791D62BEFE00FB1376 /* ProyectoFinalC.xcdatamodeld in Sources */,
+				EE2A898D1D72C12300944C3B /* DebugMapViewController.swift in Sources */,
+				EE2A898A1D72C11700944C3B /* ARTrackingManager.swift in Sources */,
+				EE2A899A1D72C89900944C3B /* codigoQRView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +368,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProyectoFinalC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.univeronline.ProyectoFinalC;
@@ -287,6 +383,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ProyectoFinalC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mx.univeronline.ProyectoFinalC;

@@ -11,12 +11,9 @@ import CoreLocation
 import MapKit
 import CoreData
 
-var arrseleccion : [Puntos] = []
-
+var arrseleccion2 : [Puntos] = []
 
 class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
-    
-  
     
     @IBOutlet weak var texto: UILabel!
     var texto2 = ""
@@ -99,6 +96,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     
     override func viewDidLoad() {
+        mapa.delegate = self
         super.viewDidLoad()
         self.configureView()
         var texto2 = configureView()
@@ -147,7 +145,10 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
         self.contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
         let seccionEntidad = NSEntityDescription.entityForName("Puntos", inManagedObjectContext: self.contexto!)
-        let peticion = seccionEntidad?.managedObjectModel.fetchRequestTemplateForName("buscarPunto")
+        //let peticion = seccionEntidad?.managedObjectModel.fetchRequestTemplateForName("buscarPunto")
+        
+        let peticion = seccionEntidad?.managedObjectModel.fetchRequestFromTemplateWithName("buscarPunto", substitutionVariables: ["codigo" : codigoRuta])
+        
         do{
             let  seccionesEntidad = try self.contexto!.executeFetchRequest(peticion!)
             
@@ -157,19 +158,6 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 let codigo = seccionEntidad2.valueForKey("codigo") as! Int
                 let latitude = seccionEntidad2.valueForKey("latitud") as! Double
                 let longitude = seccionEntidad2.valueForKey("longitud") as! Double
-                
-                /*seleccion.nombrePunto = nombrepunto
-                seleccion.codigo = codigo
-                seleccion.latitud = latitude
-                seleccion.longitud = longitude
-                
-                arrseleccion.append(seleccion)*/
-                
-                //codigoRuta2 = configureView()
-                //print(codigo)
-                //print(codigoRuta)
-                if codigo == codigoRuta {
-                   
                     
                     seleccion.nombrePunto = nombrepunto
                     seleccion.codigo = codigo
@@ -177,68 +165,49 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                     seleccion.longitud = longitude
                     
                 arrseleccion.append(seleccion)
-               
                 
-                /*punto.latitude = latitude
+                punto.latitude = latitude
                 punto.longitude = longitude
                 
                 let pin = MKPointAnnotation()
                 pin.title = String(nombrepunto)
                 pin.subtitle = "Lat. \(String(format:"%4.4f", punto.latitude)), Long. \(String(format:"%4.4f",punto.longitude))"
                 pin.coordinate = punto
-                mapa.addAnnotation(pin)*/
+                mapa.addAnnotation(pin)
+                
+                var puntoCoor = CLLocationCoordinate2D(latitude: arrseleccion[0].latitud, longitude: arrseleccion[0].longitud)
+                var puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
+                destino = MKMapItem(placemark: puntoLugar)
+                destino.name = arrseleccion[0].nombrePunto
+                
+               
+                dump(arrseleccion)
+                if arrseleccion.count > 1 {
+                    arrseleccion2.append(arrseleccion[0])
+                    dump(arrseleccion2)
+                    
+                    puntoCoor = CLLocationCoordinate2D(latitude: arrseleccion2[0].latitud, longitude: arrseleccion2[0].longitud)
+                    puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
+                    origen = MKMapItem(placemark: puntoLugar)
+                    origen.name = arrseleccion2[0].nombrePunto
+                    
+                    self.anotaPunto(origen!)
+                    self.anotaPunto(destino!)
+                    
+                    
+                    self.obtenerRuta(self.origen!, destino:self.destino!)
+                    
+                    
                 }
+               
             }
-            }
+            
+        }
+        
         catch _ {
             
         }
-        
-        print(arrseleccion.count)
-        print(arrseleccion[0].longitud)
-        print(arrseleccion[1].longitud)
-        print(arrseleccion[2].longitud)
-        //dump(arrseleccion)
-        
-      
-        
-        mapa.delegate = self
-        
-        var repetir = 1
-        var x = 0
-        var y = 1
-        
-        
-        repeat {
-            
-            let punto0 = arrseleccion[x]
-        
-        var puntoCoor = CLLocationCoordinate2D(latitude: punto0.latitud, longitude: punto0.longitud)
-        var puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-        origen = MKMapItem(placemark: puntoLugar)
-        origen.name = punto0.nombrePunto
-            
-            let punto1 = arrseleccion[y]
-        
-        puntoCoor = CLLocationCoordinate2D(latitude: punto1.latitud, longitude: punto1.longitud)
-        puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-        destino = MKMapItem(placemark: puntoLugar)
-        destino.name = punto1.nombrePunto
-        
-        self.anotaPunto(origen!)
-        self.anotaPunto(destino!)
-      
-        
-        self.obtenerRuta(self.origen!, destino:self.destino!)
-        repetir = repetir + 1
-        x = x + 1
-        y = y + 1  
-        }
-        while repetir < arrseleccion.count
-        
     }
-    
-    
     
     func anotaPunto(punto: MKMapItem){
         let anota = MKPointAnnotation()
@@ -283,7 +252,18 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
         let renderer  = MKPolylineRenderer(overlay: overlay)
         renderer.strokeColor = UIColor.redColor()
         renderer.lineWidth = 3.0
-        return renderer
+    return renderer
+    
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+           
+            let controller = segue.destinationViewController as! realidadAumentadaView
+            controller.textoi = texto2
+        
+    }
+    
+    
+    
     
 }

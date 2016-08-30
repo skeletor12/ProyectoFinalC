@@ -31,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQF-gj-Vse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971" y="392"/>
+            <point key="canvasLocation" x="968.5" y="339.5"/>
         </scene>
         <!--Table View-->
         <scene sceneID="vXg-05-8aM">
@@ -132,6 +132,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3t-rx-JKa">
+                                <rect key="frame" x="74" y="629" width="90" height="30"/>
+                                <state key="normal" title="ReaLAumenT"/>
+                                <connections>
+                                    <segue destination="33j-TR-d7b" kind="push" id="Lv3-am-9cN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-dZ-IuC">
+                                <rect key="frame" x="191" y="629" width="50" height="30"/>
+                                <state key="normal" title="CodQR"/>
+                                <connections>
+                                    <segue destination="2Iq-8k-yHx" kind="push" id="zQU-BN-ehe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -148,7 +162,107 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqk-7y-nZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1424.5" y="1120.5"/>
+            <point key="canvasLocation" x="1423.5" y="1215.5"/>
+        </scene>
+        <!--CodigoQR View-->
+        <scene sceneID="zRz-ks-TBD">
+            <objects>
+                <viewController id="2Iq-8k-yHx" customClass="codigoQRView" customModule="ProyectoFinalC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uxR-gV-j0e"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Nz-Ru-Cd9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLc-Av-2D3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MS5-FL-pTn">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hcD-gl-ZPy">
+                            <rect key="frame" x="148" y="7" width="79" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="CAPTURAR"/>
+                            <connections>
+                                <segue destination="1kj-Hg-tOr" kind="push" identifier="detalle" id="Amz-np-SoT"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="captura" destination="hcD-gl-ZPy" id="UN6-gP-sfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u6z-28-y62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327.5" y="1215.5"/>
+        </scene>
+        <!--MuestraQR View-->
+        <scene sceneID="tRH-Ap-pvu">
+            <objects>
+                <viewController id="1kj-Hg-tOr" customClass="muestraQRView" customModule="ProyectoFinalC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n37-cg-Jn9"/>
+                        <viewControllerLayoutGuide type="bottom" id="zt1-9A-59A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tyY-5U-NS6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJN-iT-JUT">
+                                <rect key="frame" x="20" y="85" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sb-E9-pGF">
+                                <rect key="frame" x="20" y="114" width="335" height="520"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pOY-jo-tni"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="direccion" destination="vJN-iT-JUT" id="fdM-XG-R8O"/>
+                        <outlet property="web" destination="9sb-E9-pGF" id="x2c-Mf-dZt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndw-he-vDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327.5" y="2078.5"/>
+        </scene>
+        <!--Realidad Aumentada View-->
+        <scene sceneID="5Vr-le-TEv">
+            <objects>
+                <viewController id="33j-TR-d7b" customClass="realidadAumentadaView" customModule="ProyectoFinalC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kuR-8X-SUF"/>
+                        <viewControllerLayoutGuide type="bottom" id="SOu-rT-MGV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LaD-So-40g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-kd-RvB">
+                                <rect key="frame" x="20" y="72" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PyR-UD-8Yb"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="texto" destination="Glb-kd-RvB" id="ecQ-g1-GEG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFl-iV-gRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866.5" y="1215.5"/>
         </scene>
         <!--Mapa View-->
         <scene sceneID="gJv-dQ-gJZ">
@@ -210,6 +324,24 @@
                                     <segue destination="rzK-eT-e1d" kind="push" identifier="Trazando" id="FmO-aM-eMV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZcY-qj-2GN">
+                                <rect key="frame" x="227" y="632" width="50" height="30"/>
+                                <state key="normal" title="CodQR"/>
+                                <connections>
+                                    <segue destination="2Iq-8k-yHx" kind="push" id="gBX-gc-GSJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-0v-orL">
+                                <rect key="frame" x="302" y="632" width="53" height="30"/>
+                                <state key="normal" title="RedSoc"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oWh-2Z-xxY">
+                                <rect key="frame" x="115" y="632" width="90" height="30"/>
+                                <state key="normal" title="ReaLAumenT"/>
+                                <connections>
+                                    <segue destination="33j-TR-d7b" kind="push" identifier="Realidad" id="dJL-Op-7Pd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -232,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vti-PW-Pqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1866.5" y="391.5"/>
+            <point key="canvasLocation" x="1866.5" y="339.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JV1-eR-8Ll">
@@ -250,10 +382,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TO-4r-mSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="478.5" y="391.5"/>
+            <point key="canvasLocation" x="531.5" y="339.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AWM-Al-LSu"/>
+        <segue reference="Lv3-am-9cN"/>
+        <segue reference="FmO-aM-eMV"/>
+        <segue reference="zQU-BN-ehe"/>
     </inferredMetricsTieBreakers>
 </document>
