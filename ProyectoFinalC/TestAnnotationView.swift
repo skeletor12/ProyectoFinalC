@@ -86,7 +86,7 @@ public class TestAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate
     {
         if let annotation = self.annotation
         {
-            let alertView = UIAlertView(title: annotation.title, message: "Tapped", delegate: nil, cancelButtonTitle: "OK")
+            let alertView = UIAlertView(title: annotation.title, message: "", delegate: nil, cancelButtonTitle: "OK")
             alertView.show()
         }
     }

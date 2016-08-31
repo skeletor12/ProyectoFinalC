@@ -109,9 +109,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oyk-UE-9Zb">
-                                <rect key="frame" x="18" y="72" width="339" height="31"/>
-                            </slider>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-ox-LUP">
                                 <rect key="frame" x="20" y="110" width="335" height="475"/>
                             </mapView>
@@ -126,12 +123,6 @@
                                     <action selector="botones:" destination="rzK-eT-e1d" eventType="valueChanged" id="GTR-Ji-DWD"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9g-5X-Q07">
-                                <rect key="frame" x="20" y="64" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3t-rx-JKa">
                                 <rect key="frame" x="74" y="629" width="90" height="30"/>
                                 <state key="normal" title="ReaLAumenT"/>
@@ -146,18 +137,26 @@
                                     <segue destination="2Iq-8k-yHx" kind="push" id="zQU-BN-ehe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RUTA:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0he-qH-XNz">
+                                <rect key="frame" x="20" y="81" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9g-5X-Q07">
+                                <rect key="frame" x="84" y="81" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="oyk-UE-9Zb" firstAttribute="centerX" secondItem="9me-uf-89t" secondAttribute="centerX" id="mm1-qU-1Ff"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f8n-Zg-VFs"/>
                     <connections>
                         <outlet property="botones" destination="qwb-Qi-Vgn" id="KmX-B6-hvg"/>
                         <outlet property="mapa" destination="jwK-ox-LUP" id="JML-od-S0N"/>
                         <outlet property="texto" destination="a9g-5X-Q07" id="usD-TP-in7"/>
-                        <outlet property="zoom" destination="oyk-UE-9Zb" id="EUG-1W-ib9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqk-7y-nZo" userLabel="First Responder" sceneMemberID="firstResponder"/>

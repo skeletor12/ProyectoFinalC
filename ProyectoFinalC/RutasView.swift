@@ -64,8 +64,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
    
     var contexto : NSManagedObjectContext? = nil
     var contexto2 : NSManagedObjectContext? = nil
-    
-    @IBOutlet weak var zoom: UISlider!
+
     @IBOutlet weak var mapa: MKMapView!
     
     
@@ -115,10 +114,30 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
         manejador.startMonitoringSignificantLocationChanges()
         
         
+        ///////////////// localizacion usuario
+        
+        /*func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            let center = CLLocationCoordinate2D(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude)
+            
+            var punto = CLLocationCoordinate2D()
+            punto.latitude = (manager.location?.coordinate.latitude)!
+            punto.longitude = (manager.location?.coordinate.longitude)!
+            
+            
+        }*/
+        
+        let puntoCoor = CLLocationCoordinate2D(latitude: (manejador.location?.coordinate.latitude)!, longitude: (manejador.location?.coordinate.longitude)!)
+        let puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
+        origen = MKMapItem(placemark: puntoLugar)
+        origen.name = "Posicion Actual"
+        
+            
         let seleccion = Puntos ()
+        //let seleccion2 = Puntos ()
         
         var punto = CLLocationCoordinate2D()
         
+            
         
         self.contexto2 = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
@@ -140,9 +159,10 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 }
             }
         }
-        catch _ {
-            
-        }
+            catch _ {
+                
+            }
+       
     
         self.contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
@@ -169,57 +189,41 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                     seleccion.longitud = longitude
                     
                 arrseleccion.append(seleccion)
-                
                 punto.latitude = latitude
                 punto.longitude = longitude
                 
-                /*let pin = MKPointAnnotation()
+                let pin = MKPointAnnotation()
                 pin.title = String(nombrepunto)
                 pin.subtitle = "Lat. \(String(format:"%4.4f", punto.latitude)), Long. \(String(format:"%4.4f",punto.longitude))"
                 pin.coordinate = punto
-                mapa.addAnnotation(pin)*/
-                
-                let puntoCoor = CLLocationCoordinate2D(latitude: arrseleccion[0].latitud, longitude: arrseleccion[0].longitud)
-                let puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-                origen = MKMapItem(placemark: puntoLugar)
-                origen.name = arrseleccion[0].nombrePunto
-                   
-                //dump(arrseleccion)
-                if arrseleccion.count > 1 {
-                    arrseleccion2.append(arrseleccion[0])
-                    //dump(arrseleccion2)
-                    
-                
-                    
-                    let puntoCoor2 = CLLocationCoordinate2D(latitude: arrseleccion2[0].latitud, longitude: arrseleccion2[0].longitud)
+                mapa.addAnnotation(pin)
+            
+                    let puntoCoor2 = CLLocationCoordinate2D(latitude: arrseleccion[0].latitud, longitude: arrseleccion[0].longitud)
                     let puntoLugar2 = MKPlacemark(coordinate: puntoCoor2, addressDictionary: nil)
                     destino = MKMapItem(placemark: puntoLugar2)
-                    destino.name = arrseleccion2[0].nombrePunto
+                    destino.name = arrseleccion[0].nombrePunto
                     
-                    self.anotaPunto(origen!)
-                    self.anotaPunto(destino!)
+                    //self.anotaPunto(origen!)
+                    //self.anotaPunto(destino!)
                     
                     
                     self.obtenerRuta(self.origen!, destino:self.destino!)
-                    
+                                }
                     }
-                }
-               
-            }
-            
         }
-        
-        catch _ {
             
-        }
+    catch _ {
+                        
+                    }
+       
     }
     
-    func anotaPunto(punto: MKMapItem){
+    /*func anotaPunto(punto: MKMapItem){
         let anota = MKPointAnnotation()
         anota.coordinate = punto.placemark.coordinate
         anota.title = punto.name
         mapa.addAnnotation(anota)
-    }
+    }*/
     
     func obtenerRuta(origen: MKMapItem, destino: MKMapItem){
         let solicitud = MKDirectionsRequest()
@@ -255,6 +259,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay : MKOverlay) -> MKOverlayRenderer {
         let renderer  = MKPolylineRenderer(overlay: overlay)
+        
         renderer.strokeColor = UIColor.redColor()
         renderer.lineWidth = 3.0
     return renderer
