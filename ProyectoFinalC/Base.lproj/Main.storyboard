@@ -178,16 +178,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="MS5-FL-pTn">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hcD-gl-ZPy">
-                            <rect key="frame" x="148" y="7" width="79" height="30"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5Nk-kr-ea5">
+                            <rect key="frame" x="113" y="7" width="150" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="CAPTURAR"/>
+                            <connections>
+                                <segue destination="1kj-Hg-tOr" kind="push" identifier="codigos" id="PCc-jM-bcE"/>
+                            </connections>
                         </button>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="captura" destination="hcD-gl-ZPy" id="UN6-gP-sfH"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6z-28-y62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -227,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ndw-he-vDM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2327.5" y="2078.5"/>
+            <point key="canvasLocation" x="2327.5" y="2020.5"/>
         </scene>
         <!--Realidad Aumentada View-->
         <scene sceneID="5Vr-le-TEv">
@@ -371,8 +370,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zQU-BN-ehe"/>
         <segue reference="FmO-aM-eMV"/>
         <segue reference="Lv3-am-9cN"/>
+        <segue reference="zQU-BN-ehe"/>
     </inferredMetricsTieBreakers>
 </document>

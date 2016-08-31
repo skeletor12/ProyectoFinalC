@@ -12,8 +12,6 @@ import AVFoundation
 class codigoQRView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     
-    @IBOutlet weak var captura: UIButton!
-    
     
     var sesion : AVCaptureSession?
     var capa : AVCaptureVideoPreviewLayer?
@@ -78,6 +76,9 @@ class codigoQRView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             if (objMetadato.stringValue != nil) {
                 self.urls = objMetadato.stringValue
                 
+                //let navc = codigoQRView.self
+                performSegueWithIdentifier("codigos", sender: self)
+                
               ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Revisar esta seccion 
                 //let navc = codigoQRView.self 
             
@@ -91,12 +92,12 @@ class codigoQRView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
      print(urls)
-        //let origen = sender as! codigoQRView
-        let vc = segue.destinationViewController as! muestraQRView
-        //origen.sesion?.stopRunning()
-        vc.urls = urls
+        let origen = sender as! codigoQRView
+                 let vc = segue.destinationViewController as! muestraQRView
+                 origen.sesion?.stopRunning()
+                   vc.urls = origen.urls
     }
    
     

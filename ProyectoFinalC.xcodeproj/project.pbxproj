@@ -26,6 +26,7 @@
 		EE2A899C1D72C8F000944C3B /* muestraQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2A899B1D72C8F000944C3B /* muestraQRView.swift */; };
 		EE65EEBB1D680B9E00D4A612 /* mapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE65EEBA1D680B9E00D4A612 /* mapaView.swift */; };
 		EE8B4EFA1D65176900E9773D /* Rutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8B4EF91D65176900E9773D /* Rutas.swift */; };
+		EECC70631D76940C005D1DDC /* coloresRutas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECC70621D76940C005D1DDC /* coloresRutas.swift */; };
 		EEFD57581D63FB6700FCEFCB /* Puntos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD57571D63FB6700FCEFCB /* Puntos.swift */; };
 		EEFD575C1D6406A600FCEFCB /* RutasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD575B1D6406A600FCEFCB /* RutasView.swift */; };
 		EEFD575E1D641D6B00FCEFCB /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFD575D1D641D6B00FCEFCB /* TableView.swift */; };
@@ -57,6 +58,7 @@
 		EE2A899B1D72C8F000944C3B /* muestraQRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = muestraQRView.swift; sourceTree = "<group>"; };
 		EE65EEBA1D680B9E00D4A612 /* mapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapaView.swift; sourceTree = "<group>"; };
 		EE8B4EF91D65176900E9773D /* Rutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rutas.swift; sourceTree = "<group>"; };
+		EECC70621D76940C005D1DDC /* coloresRutas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = coloresRutas.swift; sourceTree = "<group>"; };
 		EEFD57571D63FB6700FCEFCB /* Puntos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Puntos.swift; sourceTree = "<group>"; };
 		EEFD575B1D6406A600FCEFCB /* RutasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RutasView.swift; sourceTree = "<group>"; };
 		EEFD575D1D641D6B00FCEFCB /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				EEFDB97F1D62BEFE00FB1376 /* Info.plist */,
 				EEFDB9771D62BEFE00FB1376 /* ProyectoFinalC.xcdatamodeld */,
 				EEFD57571D63FB6700FCEFCB /* Puntos.swift */,
+				EECC70621D76940C005D1DDC /* coloresRutas.swift */,
 				EEFD575B1D6406A600FCEFCB /* RutasView.swift */,
 				EEFD575D1D641D6B00FCEFCB /* TableView.swift */,
 				EE8B4EF91D65176900E9773D /* Rutas.swift */,
@@ -246,6 +249,7 @@
 				EE2A898B1D72C11700944C3B /* ARViewController.swift in Sources */,
 				EE2A89891D72C11700944C3B /* ARConfiguration.swift in Sources */,
 				EE2A89981D72C28500944C3B /* TestAnnotationView.swift in Sources */,
+				EECC70631D76940C005D1DDC /* coloresRutas.swift in Sources */,
 				EE8B4EFA1D65176900E9773D /* Rutas.swift in Sources */,
 				EE2A89731D72BF2C00944C3B /* realidadAumentadaView.swift in Sources */,
 				EEFDB9711D62BEFE00FB1376 /* AppDelegate.swift in Sources */,

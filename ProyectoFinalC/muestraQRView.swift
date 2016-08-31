@@ -17,7 +17,7 @@ class muestraQRView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        direccion?.text = urls
+        direccion?.text = urls!
         let url = NSURL(string: urls!)
         let peticion = NSURLRequest(URL: url!)
         web.loadRequest(peticion)

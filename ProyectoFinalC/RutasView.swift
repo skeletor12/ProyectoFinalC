@@ -11,6 +11,7 @@ import CoreLocation
 import MapKit
 import CoreData
 
+
 var arrseleccion2 : [Puntos] = []
 
 class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  {
@@ -20,6 +21,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     var textoi = ""
     var selector = 0
     var eleccion = 0
+    let color = Colores()
     
     var detailItem: AnyObject? {
         didSet {
@@ -257,10 +259,11 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
         mapa.setRegion(region, animated: true)
     }
     
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay : MKOverlay) -> MKOverlayRenderer {
         let renderer  = MKPolylineRenderer(overlay: overlay)
-        
-        renderer.strokeColor = UIColor.redColor()
+        renderer.strokeColor = color.coloresAleatorio()
+            //UIColor.redColor()
         renderer.lineWidth = 3.0
     return renderer
     
