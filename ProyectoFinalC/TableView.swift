@@ -104,9 +104,9 @@ class TableView: UITableViewController, NSFetchedResultsControllerDelegate  {
                 punto.codigo = tituloreq
                 punto.nombre = isbnreq
                 punteria.append(punto)
-                print(punto.nombre)
-                print(punto.codigo)
-                dump(punteria)
+                //print(punto.nombre)
+                //print(punto.codigo)
+                //dump(punteria)
               
                 
             }

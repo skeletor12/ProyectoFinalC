@@ -136,7 +136,7 @@
                                 <rect key="frame" x="74" y="629" width="90" height="30"/>
                                 <state key="normal" title="ReaLAumenT"/>
                                 <connections>
-                                    <segue destination="33j-TR-d7b" kind="push" id="Lv3-am-9cN"/>
+                                    <segue destination="33j-TR-d7b" kind="push" identifier="Realidad" id="Lv3-am-9cN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-dZ-IuC">
@@ -183,9 +183,6 @@
                             <rect key="frame" x="148" y="7" width="79" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="CAPTURAR"/>
-                            <connections>
-                                <segue destination="1kj-Hg-tOr" kind="push" identifier="detalle" id="Amz-np-SoT"/>
-                            </connections>
                         </button>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -212,7 +209,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJN-iT-JUT">
                                 <rect key="frame" x="20" y="85" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sb-E9-pGF">
@@ -244,21 +241,10 @@
                     <view key="view" contentMode="scaleToFill" id="LaD-So-40g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-kd-RvB">
-                                <rect key="frame" x="20" y="72" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="PyR-UD-8Yb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="texto" destination="Glb-kd-RvB" id="ecQ-g1-GEG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFl-iV-gRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,8 +372,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Lv3-am-9cN"/>
-        <segue reference="FmO-aM-eMV"/>
         <segue reference="zQU-BN-ehe"/>
+        <segue reference="FmO-aM-eMV"/>
+        <segue reference="Lv3-am-9cN"/>
     </inferredMetricsTieBreakers>
 </document>

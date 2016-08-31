@@ -189,17 +189,15 @@ class mapaView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate  
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "Trazando" {
-            let ruta = envioRuta
+            print(envioRuta.nombre)
             let controller = segue.destinationViewController as! RutasView
-            controller.textoi = ruta.nombre
+            controller.textoi = envioRuta.nombre
             controller.selector = 2
         }
         
         if segue.identifier == "Realidad" {
-            let ruta = envioRuta
             let controller = segue.destinationViewController as! realidadAumentadaView
-            controller.textoi = ruta.nombre
-        }
+            controller.codigoRutaRea = puntoDatos.codigo  }
         
         
     }

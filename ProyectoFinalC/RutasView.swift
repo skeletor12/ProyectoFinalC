@@ -53,11 +53,13 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     
     override func viewWillAppear(animated: Bool) {
         arrseleccion.removeAll()
+        arrseleccion2.removeAll()
         codigoRuta=Int(codigoRuta)
+         eleccion = Int(selector)
         if eleccion == 2 {
         texto.text=String(textoi) }
         texto2=String(textoi)
-        //print(codigoRuta)
+        print(codigoRuta)
     }
    
     var contexto : NSManagedObjectContext? = nil
@@ -131,10 +133,10 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 
                 let isbnreq = seccionEntidad4.valueForKey("nombre") as! String
                 let tituloreq = seccionEntidad4.valueForKey("codigo") as! Int
-                
+                print(texto2)
                 if isbnreq == texto2 {
                 codigoRuta = tituloreq
-                //print(codigoRuta)
+                print(codigoRuta)
                 }
             }
         }
@@ -145,9 +147,9 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
         self.contexto = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         
         let seccionEntidad = NSEntityDescription.entityForName("Puntos", inManagedObjectContext: self.contexto!)
-        //let peticion = seccionEntidad?.managedObjectModel.fetchRequestTemplateForName("buscarPunto")
+        let peticion = seccionEntidad?.managedObjectModel.fetchRequestTemplateForName("buscarPunto")
         
-        let peticion = seccionEntidad?.managedObjectModel.fetchRequestFromTemplateWithName("buscarPunto", substitutionVariables: ["codigo" : codigoRuta])
+        //let peticion = seccionEntidad?.managedObjectModel.fetchRequestFromTemplateWithName("buscarPunto", substitutionVariables: ["codigo" : codigoRuta])
         
         do{
             let  seccionesEntidad = try self.contexto!.executeFetchRequest(peticion!)
@@ -158,6 +160,8 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 let codigo = seccionEntidad2.valueForKey("codigo") as! Int
                 let latitude = seccionEntidad2.valueForKey("latitud") as! Double
                 let longitude = seccionEntidad2.valueForKey("longitud") as! Double
+                
+                if codigo == codigoRuta {
                     
                     seleccion.nombrePunto = nombrepunto
                     seleccion.codigo = codigo
@@ -169,27 +173,28 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                 punto.latitude = latitude
                 punto.longitude = longitude
                 
-                let pin = MKPointAnnotation()
+                /*let pin = MKPointAnnotation()
                 pin.title = String(nombrepunto)
                 pin.subtitle = "Lat. \(String(format:"%4.4f", punto.latitude)), Long. \(String(format:"%4.4f",punto.longitude))"
                 pin.coordinate = punto
-                mapa.addAnnotation(pin)
+                mapa.addAnnotation(pin)*/
                 
-                var puntoCoor = CLLocationCoordinate2D(latitude: arrseleccion[0].latitud, longitude: arrseleccion[0].longitud)
-                var puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-                destino = MKMapItem(placemark: puntoLugar)
-                destino.name = arrseleccion[0].nombrePunto
-                
-               
-                dump(arrseleccion)
+                let puntoCoor = CLLocationCoordinate2D(latitude: arrseleccion[0].latitud, longitude: arrseleccion[0].longitud)
+                let puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
+                origen = MKMapItem(placemark: puntoLugar)
+                origen.name = arrseleccion[0].nombrePunto
+                   
+                //dump(arrseleccion)
                 if arrseleccion.count > 1 {
                     arrseleccion2.append(arrseleccion[0])
-                    dump(arrseleccion2)
+                    //dump(arrseleccion2)
                     
-                    puntoCoor = CLLocationCoordinate2D(latitude: arrseleccion2[0].latitud, longitude: arrseleccion2[0].longitud)
-                    puntoLugar = MKPlacemark(coordinate: puntoCoor, addressDictionary: nil)
-                    origen = MKMapItem(placemark: puntoLugar)
-                    origen.name = arrseleccion2[0].nombrePunto
+                
+                    
+                    let puntoCoor2 = CLLocationCoordinate2D(latitude: arrseleccion2[0].latitud, longitude: arrseleccion2[0].longitud)
+                    let puntoLugar2 = MKPlacemark(coordinate: puntoCoor2, addressDictionary: nil)
+                    destino = MKMapItem(placemark: puntoLugar2)
+                    destino.name = arrseleccion2[0].nombrePunto
                     
                     self.anotaPunto(origen!)
                     self.anotaPunto(destino!)
@@ -197,7 +202,7 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
                     
                     self.obtenerRuta(self.origen!, destino:self.destino!)
                     
-                    
+                    }
                 }
                
             }
@@ -257,9 +262,11 @@ class RutasView: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate 
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-           
+        print(codigoRuta)
+        
+           if segue.identifier == "Realidad" {
             let controller = segue.destinationViewController as! realidadAumentadaView
-            controller.textoi = texto2
+            controller.codigoRutaRea = codigoRuta }
         
     }
     

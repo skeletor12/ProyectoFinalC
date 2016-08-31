@@ -14,6 +14,7 @@ class codigoQRView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     @IBOutlet weak var captura: UIButton!
     
+    
     var sesion : AVCaptureSession?
     var capa : AVCaptureVideoPreviewLayer?
     var marcoQR : UIView?
@@ -62,6 +63,8 @@ class codigoQRView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
+
+ 
     
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         marcoQR?.frame = CGRectZero
@@ -76,24 +79,24 @@ class codigoQRView: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 self.urls = objMetadato.stringValue
                 
               ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Revisar esta seccion 
-                //let navc = codigoQRView.self
-                //navc.performSegueWithIdentifier(self)
-            }
+                //let navc = codigoQRView.self 
+            
             
         }
     }
-    
+    }
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        let origen = sender as! codigoQRView
+     print(urls)
+        //let origen = sender as! codigoQRView
         let vc = segue.destinationViewController as! muestraQRView
-        origen.sesion?.stopRunning()
-        vc.urls = origen.urls
+        //origen.sesion?.stopRunning()
+        vc.urls = urls
     }
    
     
